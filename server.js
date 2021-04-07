@@ -100,8 +100,12 @@ const server = new ApolloServer({
   context: ({ db })
 });
 
-server.listen(process.env.PORT, () => {
+const port = 4000;
+
+server.listen({ port });
+
+/*server.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + server.url);
 }).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
-});
+});*/
