@@ -1,68 +1,43 @@
 const { ApolloServer, gql } = require("apollo-server");
-const db = require('./db')
-
-// Construct a schema, using GraphQL schema language
 const typeDefs = gql`
-  enum Genre {
-    Pop,
-    Rock,
-    Alternative
-    HipHop,
-    Folk
+  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
+
+  # This "Book" type defines the queryable fields for every book in our data source.
+  type Book {
+    title: String
+    author: String
   }
 
-  type Track {
-    title: String!
-    number: Int!
-  }
-
-  type Artist {
-    name: String!
-  }
-
-  type Album {
-    title: String!
-    artist: Artist!
-    tracks: [Track!]!
-    genre: Genre!
-  }
-
+  # The "Query" type is special: it lists all of the available queries that
+  # clients can execute, along with the return type for each. In this
+  # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
-    albums(genre: Genre): [Album!]!
-    album(title: String!): Album
+    books: [Book]
   }
 `;
 
-// Provide resolver functions for your schema fields
+const books = [
+  {
+    title: 'The Awakening',
+    author: 'Kate Chopin',
+  },
+  {
+    title: 'City of Glass',
+    author: 'Paul Auster',
+  },
+];
+
 const resolvers = {
   Query: {
-    albums: (root, args, context) => {
-      const isFilteringByGenre = args && args.genre;
-
-      if (isFilteringByGenre) {
-        return context.db.getAlbumsByGenre(args.genre)
-      }
-
-      return context.db.getAllAlbums();
-    },
-    album: (root, args, context) => {
-      const albumTitle = args && args.title;
-
-      try {
-        return context.db.getAlbumByTitle(albumTitle);
-      } catch (err) {
-        return null;
-      }
-    }
-  }
+    books: () => books,
+  },
 };
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  playground: true,
-  context: ({ db })
+  playground: true
 });
 
 server.listen(process.env.PORT, () => {
