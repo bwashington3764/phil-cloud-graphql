@@ -5,13 +5,6 @@ const path = require('path');
 let json = fs.readFileSync(path.join(__dirname, './data.json'));
 let data = JSON.parse(json);
 
-/**
- * Use the data mapper pattern to encapsulate data transformations
- * 
- * https://en.wikipedia.org/wiki/Data_mapper_pattern
- * https://khalilstemmler.com/articles/typescript-domain-driven-design/repository-dto-mapper/#Data-Mappers
- */
-
 const TracksMap = {
   toGraphQL: (tracks) => {
     return tracks.map((track, index) => ({
