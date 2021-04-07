@@ -101,7 +101,7 @@ const server = new ApolloServer({
 });
 
 server.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port ");
-})/*.then(({ url }) => {
+  console.log("Your app is listening on port " + server.url);
+}).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
-});*/
+});
