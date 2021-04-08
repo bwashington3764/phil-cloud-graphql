@@ -1,0 +1,98 @@
+[
+  {
+    "person_id": 5703,
+    "work_email": "kevin.zeigler+187728jamie4@salesforce.com",
+    "first_name": "Jamie",
+    "last_name": "Warrington",
+    "sign_up_participation": "TRUE",
+    "log_hours_participation": "TRUE"
+  },
+  {
+    "person_id": 4673,
+    "work_email": "53148a58-d1c3-4bad-a59d-9d7f21301b3b@api-token.internal.makanaplatform.com",
+    "first_name": "PSUEDO_FIRST",
+    "last_name": "PSUEDO_LAST",
+    "sign_up_participation": "FALSE",
+    "log_hours_participation": "FALSE"
+  },
+  {
+    "person_id": 5681,
+    "work_email": "kevin.zeigler+187728jamie3@salesforce.com",
+    "first_name": "Jamie",
+    "last_name": "Warrington",
+    "sign_up_participation": "TRUE",
+    "log_hours_participation": "FALSE"
+  },
+  {
+    "person_id": 4796,
+    "work_email": "kevin.zeigler+187728jamie2@salesforce.com",
+    "first_name": "Jamie",
+    "last_name": "Warrington",
+    "sign_up_participation": "TRUE",
+    "log_hours_participation": "FALSE"
+  },
+  {
+    "person_id": 4793,
+    "work_email": "kevin.zeigler+187728jamie@salesforce.com",
+    "first_name": "Jamie",
+    "last_name": "Warrington",
+    "sign_up_participation": "TRUE",
+    "log_hours_participation": "TRUE"
+  },
+  {
+    "person_id": 4791,
+    "work_email": "aulles+187728@salesforce.com",
+    "first_name": "Annie",
+    "last_name": "Ulles",
+    "sign_up_participation": "FALSE",
+    "log_hours_participation": "FALSE"
+  },
+  {
+    "person_id": 4696,
+    "work_email": "kevin.zeigler+187728tim@salesforce.com",
+    "first_name": "Tim",
+    "last_name": "Reynolds",
+    "sign_up_participation": "TRUE",
+    "log_hours_participation": "FALSE"
+  },
+  {
+    "person_id": 4512,
+    "work_email": "siobhan.jones+kz@salesforce.com",
+    "first_name": "Siobhan",
+    "last_name": "Jones",
+    "sign_up_participation": "FALSE",
+    "log_hours_participation": "FALSE"
+  },
+  {
+    "person_id": 4462,
+    "work_email": "6878f737-064a-4e6c-921b-e5ce2f05cba8@api-token.internal.makanaplatform.com",
+    "first_name": "PSUEDO_FIRST",
+    "last_name": "PSUEDO_LAST",
+    "sign_up_participation": "FALSE",
+    "log_hours_participation": "FALSE"
+  },
+  {
+    "person_id": 4447,
+    "work_email": "kevin.zeigler+john10click@salesforce.com",
+    "first_name": "John",
+    "last_name": "Smith",
+    "sign_up_participation": "FALSE",
+    "log_hours_participation": "TRUE"
+  },
+  {
+    "person_id": 4446,
+    "work_email": "kevin.zeigler+tim10click@salesforce.com",
+    "first_name": "Tim",
+    "last_name": "Reynolds",
+    "sign_up_participation": "TRUE",
+    "log_hours_participation": "TRUE"
+  },
+  {
+    "person_id": 4445,
+    "work_email": "kevin.zeigler+187728@salesforce.com",
+    "first_name": "Lauren",
+    "last_name": "Bailey",
+    "sign_up_participation": "TRUE",
+    "log_hours_participation": "TRUE"
+  }
+]

@@ -1,4 +1,59 @@
 const { ApolloServer, gql } = require("apollo-server");
+const fs = require('fs');
+const path = require('path');
+const GQL = require('./GQL');
+
+let completeData = {};
+const dataFileArray = [
+  {'Donation Data':'Donation_Data'},
+  {'Donation Participation':'Donation_Participation'},
+  {'Volunteer Activity':'Volunteer_Activity'},
+  {'Volunteering Participation':'Volunteering_Participation'}
+];
+dataFileArray .forEach(file => {
+  let json = fs.readFileSync(path.join(__dirname, `./data/${Object.keys(file)}.json`));
+  let data = JSON.parse(json);
+
+  completeData[Object.values(file)] = data; 
+});
+
+//console.log(completeData['Volunteering_Participation']);
+//console.log(GQL.typeDefs);
+
+const typeDefs = GQL.typeDefs;
+
+const resolvers = {
+  Query: {
+    Donation_Data: () => completeData['Donation_Data'],
+    Donation_Participation:() => completeData['Donation_Participation'],
+    Volunteer_Activity:() => completeData['Volunteer_Activity'],
+    Volunteering_Participation:() => completeData['Volunteering_Participation']
+  },
+};
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  playground: true
+});
+
+server.listen(process.env.PORT, () => {
+  console.log("Your app is listening on port ");
+}).then(({ url }) => {
+  console.log(`${url}`);
+});
+
+
+
+
+/*
+
+Example
+
+*/
+
+/*const { ApolloServer, gql } = require("apollo-server");
 const typeDefs = gql`
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
 
@@ -41,7 +96,9 @@ const server = new ApolloServer({
 });
 
 server.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + server.url);
+  console.log("Your app is listening on port ");
 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
+  console.log(`${url}`);
 });
+
+*/
